@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block 'main'%}
+<center>
+  {% if error %}
+  <div class="alert alert-danger" role="alert">
+    {{ error }}
+  </div>
+  {% endif %}
+    
+    <div class="col-md-3 mx-auto mt-5 shadow rounded" style="height: 600px; width: 500px;" >
+        <h3>Login Form </h3>
+        <form action="/login" method="post">
+          {% csrf_token %}
+            <div class="form-group">
+              <label for="exampleInputEmail1" style="margin-right: 80%;">Username</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Username" name="username">
+              <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+            </div><br>
+            <div class="form-group">
+              <label for="exampleInputPassword1"style="margin-right: 80%;">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+            </div><br>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label><br><br>
+              <h6>Not a user? <a href="/register">Sign up</a>here </h6>
+            </div><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+    </div>
+</center>
+
+{% endblock 'main' %}

@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="container">   <!--main container-->
+        <div class="row">  <!--row 1  header start-->
+            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Dairy Farm</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Register</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-person-circle"></i>&nbsp;Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Log out</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-cart-fill"></i>&nbsp;Cart</a>
+                      </li>
+                      
+                      
+                      <!-- <li class="nav-item dropdown">
+                        
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-circle"></i>&nbsp;Login
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Rgister</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li> -->
+                      <!-- <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                      </li> -->
+                    </ul>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+
+        </div> <!--row 1 header end-->
+
+        <div class="row">   <!--row 2 start-->
+            <div class="col-3">   <!--row 2 col 1 start-->
+
+            </div><!--row 2 col 1 end-->
+            <div class="col-9"><!--row 2 col 2 start-->
+                <center><h4><i>Products for you</i></h4></center>
+
+            </div><!--row 2 col 2 end-->
+
+        </div>    <!--row 2 end-->
+
+        <div class="row mt-2"  ><!--row 3 start-->
+            <div class="col-3">
+                <h5>Get to know us</h5>
+                <a href="#">Contact Us</a><br>
+                <a href="#">About Us</a>
+            </div>
+            <div class="col-3">
+              <h5>Connect with us</h5>
+              <i class="bi bi-telephone-fill"> 8695741236</i><br>
+              <i class="bi bi-facebook"> Suyash_shelar</i><br>
+              <i class="bi bi-whatsapp"> 4563217895</i><br>
+              <i class="bi bi-instagram"> suyash.shelar01</i><br>
+                
+            </div>
+            <div class="col-3">
+                
+            </div>
+            <div class="col-3">
+                <h5>Registered Office Address :</h5>
+                <i class="bi bi-geo-alt"></i>
+                <p>4th Floor, Kerom Building, Next to State Bank of India, Near Toyota, Showroom, Midc, Road No: 18, Waghle Industrial Estate, Thane, Maharashtra 400604</p>
+            </div>
+
+        </div><!--row 3 end-->
+
+    </div>  <!--main container end -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

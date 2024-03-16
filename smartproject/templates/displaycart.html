@@ -1,0 +1,56 @@
+{% extends 'layout3.html' %}
+{% load static %}
+{% block 'main' %}
+<div class="row"> <!--row 1 start-->
+    
+    <div class="col-8"> <!--row 1/col-1 start-->
+        {% if count == 0 %}
+            <div style="height: 400px;">
+                <center style="margin-top: 50px;">
+                    <img src="{% static 'images/empty cart.png' %}" alt="">
+                    <h4>Your cart is empty</h4>
+                    <a href="/"><button type="button" class="btn btn-outline-secondary">Browse Products</button></a>
+                </center>
+            </div>
+            
+        {% endif %}
+        {% for items in cart_items %}
+           <div class="row"> <!--row 1/inner row1 start-->
+            <div class="col-md-5 mt-2">
+                <img src="{{items.pid.pimage.url}}" class="card-img-top" alt="..." style="height: 72.9%;">
+
+            {% if items.quantity > 1 %}
+            <a href="/updatequantity/{{items.id}}/sub" class="btn btn-dark mt-2"> - </a>&nbsp;
+            {% endif %}
+            <span>{{ items.quantity }}</span>&nbsp;
+            <a href="/updatequantity/{{items.id}}/add" class="btn btn-dark mt-2"> + </a>
+            </div>
+            <div class="col-md-6 mt-2">
+                <div class="card" >
+                     
+                    <div class="card-body">
+                      <h6 class="card-title">{{items.pid.name}}</h6>
+                      <p class="card-text">{{items.pid.quantity}}</p>
+                      <p class="card-text"><i class="bi bi-currency-rupee"></i> {{items.pid.price}}</p>
+                      <a href="/removecart/{{items.id}}" class="btn btn-dark">Remove</a> &nbsp;&nbsp;&nbsp;
+                      <a href="/" class="btn btn-dark">Add More</a>
+                    </div>
+                </div>
+
+            </div>
+            </div><!--row 1/inner row1 end-->
+        {% endfor %}
+
+    </div><!--row 1/col-1 end-->
+    <div class="col-4 shadow square mt-2"><!--row 1/col-2 start-->
+        <h6>PRICE DETAILS</h6><hr>
+        <p>Price ({{count}} items)  <i class="bi bi-currency-rupee" style="margin-left: 41%;"> <b>{{total}}</b> </i></p>
+        <p>Handling Charge  <i class="bi bi-currency-rupee" style="margin-left: 35%;"> 5.00 </i></p><hr>
+        <p><b>Total Bill</b>  <i class="bi bi-currency-rupee" style="margin-left: 48%;"> <b>{{ grandtotal }}</b> </i></p>
+        <hr>
+        <a href="/placeorder" class="btn btn-dark">PLACE ORDER</a>
+    </div><!--row 1/col-2 end-->
+    
+
+</div>
+{% endblock 'main' %}

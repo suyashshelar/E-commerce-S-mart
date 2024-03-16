@@ -1,0 +1,37 @@
+{% extends 'layout3.html' %}
+{% load static %}
+{% block 'main' %}
+
+<div class="row"><!--row 1 start-->
+    <div class="col-3 mt-3" style=" background-color: rgb(68, 23, 112); height: 500px; position: sticky; top: 0;" ><!--row 1  col-1 start-->
+        <h5 style="color: white;">My Account</h5>
+        <strong style="color: rgb(216, 196, 251);">{{ user.username }}</strong><br>
+        <strong style="color: rgb(216, 196, 251);">{{ user.email }}</strong> 
+        <hr style="color: white;">
+        <!-- <button type="button" class="btn btn-white btn-lg btn-block " style="margin-bottom: 2px;"><i class="bi bi-handbag"></i>&nbsp;Orders </button> -->
+        <a class="nav-link active" aria-current="page" href="/profile" style="color: white; margin-bottom: 10%;"><i class="bi bi-handbag"></i>&nbsp;Orders</a>
+        <hr>
+        <a class="nav-link active" aria-current="page" href="/contactus" style="color: white; margin-bottom: 10%;"><i class="bi bi-chat-text"></i>&nbsp;Customer Support</a>
+        <hr>
+        <a class="nav-link active" aria-current="page" href="/display_address" style="color: white; margin-bottom: 10%;"><i class="bi bi-geo-alt"></i>&nbsp;Addresses</a>
+        <hr>
+        <strong><a href="/logout" style="color: black; margin-left: 30%; ">Log Out  </a></strong>
+    </div><!--row 1  col-1 end-->
+
+    <div class="col-9 mt-3"><!--row 1  col-2 start-->
+        {% for orders in data %}
+            <div class="row ">
+                <div class="col-3">
+                    <img src="{{ orders.pid.pimage.url }}" alt="" style="height: 93%;  width: 60%;" >
+                </div>
+                <div class="col-9">
+                    <p><b>{{orders.pid.name}}</b></p>
+                    <p><b>order id is # {{ orders.orderid }}</b></p> 
+                    <!-- <hr> -->
+                </div>
+            </div>
+            <hr>
+        {% endfor %}
+    </div><!--row 1  col-2 end-->
+</div><!--row 1 end-->
+{% endblock 'main' %}

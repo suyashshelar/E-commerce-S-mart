@@ -1,0 +1,56 @@
+{% extends 'layout2.html' %}
+{% load static %}
+{% block 'main' %}
+
+{% if success %}
+<div class="alert alert-success" role="alert">
+    {{ success }}
+  </div>
+{% endif%}
+
+{% if messages %}
+{% for msg in messages %}
+<script>
+    alert('{{msg}}')
+</script>
+{% endfor %}
+{% endif %} 
+
+<div class="col-9"><!--row 2 col 2 start-->
+    <div class="row">
+        <div class="col-3">
+            <h6><i>Explore By Categories</i></h6>
+        </div>
+        <div class="col-9">
+            <a href="/">All</a> &nbsp;
+            <a href="/category/Packaged Food">Packaged Food</a> &nbsp;
+            <a href="/category/Cold Drinks">Cold Drinks</a> &nbsp;
+            <a href="/category/Sweet Cravings">Sweet Cravings</a> &nbsp;
+            <a href="/category/Cleaning Essentials">Cleaning Essentials</a> &nbsp;
+        </div>
+        
+
+    </div><br><br>
+    <center><h4><i>Products for you</i></h4></center>
+    <div class="row">
+        {% for value in products %}
+        <div class="col-md-3 col-sm-6 mt-2">
+            <div class="card" style="width: 100%;">
+                <img src="{{value.pimage.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{value.name}}</h5>
+                  <p class="card-text">{{value.quantity}}</p><br>
+                  <p class="card-text"><i class="bi bi-currency-rupee"></i> {{value.price}}</p>
+                  <a href="/productdetails/{{value.id}}" class="btn btn-dark">Details</a>
+                </div>
+              </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div><!--row 2 col 2 end-->
+
+
+{% endblock 'main' %}
